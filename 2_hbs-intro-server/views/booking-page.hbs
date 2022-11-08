@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Estos son los detalles de tu reserva, {{name}}</h1>
+    <hr>
+
+    <p>Vas a realizar el curso de {{cohort}} en el campus de {{campus}} (fecha {{date}})</p>
+    <hr>
+
+    <p>Detalles del pago</p>
+    {{#if debt}}
+    <p>Aviso! Aún tienes pendiente de abono {{debt}} euros</p>
+    {{else}}
+    <p>Tus pagos están al día</p>
+    {{/if}}
+    <hr>
+
+    <p>Detalles del staff</p>
+    {{#if teacher}}
+    <p>Tu profesor/a será {{teacher}}</p>
+    {{else}}
+    <p>Tu profesor/a será asignado/a próximamnete</p>
+    {{/if}}
+    <hr>
+
+    <p>Asignaturas:</p>
+    <ul>
+        {{#each subjects}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+
+    <hr>
+
+    {{#unless address}}
+    <p>AVISO! No tenemos tu dirección</p>
+    {{/unless}}
+
+</body>
+
+</html>
